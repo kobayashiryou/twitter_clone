@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: npm run serve
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 9000:8080
