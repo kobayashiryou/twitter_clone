@@ -9,4 +9,4 @@ services:
     volumes:
       - ./frontend:/app
     ports:
-      - 9000:8080
+      - 8080:8080
