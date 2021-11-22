@@ -1,10 +1,22 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/user">User</router-link>
-    <router-view/>
+  <div>
+    <GlobalHeader />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/user">User</router-link>
+      <router-view/>
+    </div>
   </div>
 </template>
+<script>
+import GlobalHeader from './components/organanisms/GlobalHeader.vue';
+
+export default {
+  components: {
+    GlobalHeader
+  }
+}
+</script>
 
 <style>
 #app {
@@ -13,10 +25,11 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: beige;
 }
 
 #nav {
-  padding: 30px;
+  padding: 60px;
 }
 
 #nav a {
