@@ -13,25 +13,22 @@ import GlobalHeader from './components/organanisms/GlobalHeader.vue';
 
 export default {
   components: {
-    GlobalHeader
+    GlobalHeader,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
   background: beige;
+  margin: 0 auto;
 }
-
+#app {
+  text-align: center;
+}
 #nav {
   padding: 60px;
 }
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;
