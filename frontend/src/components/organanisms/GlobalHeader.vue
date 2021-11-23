@@ -1,13 +1,15 @@
 <template>
   <div class="header">
     <div class="logo">
-      <SideMenu @click="onSide = onClickSide">開く</SideMenu>
+      <button @click="onClickSide = !onClickSide">開く</button>
+      <SideMenu :openSide="onClickSide" />
       <ScrollTop />
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
 import ScrollTop from '../atoms/ScrollTop.vue'
 import SideMenu from '../molcules/SideMenu.vue'
 
@@ -18,9 +20,7 @@ export default {
   },
 
   setup() {
-    const onClickSide = () => {
-      return true
-    }
+    const onClickSide = ref(false);
     return {
       onClickSide
     }

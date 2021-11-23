@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="openMenu"
+    v-show="openSide"
     class="bar"
   >
     <span>メニュー1</span>
@@ -10,20 +10,11 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 export default {
   props: {
     openSide: {
       type: Boolean,
       default: false
-    }
-  },
-
-  setup(props) {
-    const openMenu = ref(props.openSide)
-
-    return {
-      openMenu
     }
   }
 }
