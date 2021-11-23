@@ -1,21 +1,34 @@
 <template>
   <div class="header">
     <div class="logo">
-      <span>プロフィール</span>
-      <span>scrollTop</span>
-      <span>タイムライン切り替え</span>
+      <SideMenu @click="onSide = onClickSide">開く</SideMenu>
+      <ScrollTop />
     </div>
   </div>
-
 </template>
 
 <script>
-export default {
+import ScrollTop from '../atoms/ScrollTop.vue'
+import SideMenu from '../molcules/SideMenu.vue'
 
+export default {
+  components: {
+    ScrollTop,
+    SideMenu
+  },
+
+  setup() {
+    const onClickSide = () => {
+      return true
+    }
+    return {
+      onClickSide
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
   .header {
     height: 60px;
     width: 100%;
