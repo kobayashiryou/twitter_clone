@@ -1,21 +1,22 @@
 <template>
-  <div>
-    <span @click="onClick">戻る<span>
-  </div>
+    <span @click="onClick">戻る</span>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script>
 
-export default defineComponent({
+export default {
   setup() {
     const onClick = () => {
       return window.scroll(0,0);
     }
-    return onClick
-  },
-})
+    return {
+      onClick
+    }
+  }
+}
 </script>
 
-<style lang="sass" scoped>
-
+<style scoped>
+  span {
+    cursor: pointer;
+  }
 </style>
