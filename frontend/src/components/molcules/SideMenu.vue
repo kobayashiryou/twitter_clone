@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="openSide"
+    v-show="openSide"
     class="bar"
   >
     <span>メニュー1</span>
