@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .home {
     height: 2000px
   }

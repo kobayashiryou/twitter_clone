@@ -8,7 +8,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 .user {
   height: 2000px
 }
