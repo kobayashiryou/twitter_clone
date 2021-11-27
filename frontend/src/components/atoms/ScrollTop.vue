@@ -1,5 +1,5 @@
 <template>
-    <span @click="onClick">戻る</span>
+  <span @click="onClick">戻る</span>
 </template>
 <script>
 
