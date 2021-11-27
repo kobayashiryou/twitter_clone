@@ -2,6 +2,7 @@
   <div
     v-show="openSide"
     class="bar"
+    te
   >
     <span>メニュー1</span>
     <span>メニュー2</span>
@@ -26,6 +27,7 @@ export default {
   height: 100vh;
   width: 40%;
   position: fixed;
+  top: 0;
   background: white;
 }
 
