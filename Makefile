@@ -7,3 +7,5 @@ restart:
 	docker-compose restart
 down:
 	docker-compose down
+ps:
+	docker-compose ps

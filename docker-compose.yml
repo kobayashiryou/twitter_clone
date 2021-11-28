@@ -1,6 +1,15 @@
 version: '3.2'
 
 services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./api:/app
+    ports:
+      - 3000:3000
   frontend:
     build:
       context: ./frontend
@@ -10,3 +19,18 @@ services:
       - ./frontend:/app
     ports:
       - 8080:8080
+  database:
+    restart: always
+    image: mysql:8.0.27
+    platform: linux/x86_64
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql-datavolume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+volumes:
+  mysql-datavolume:
+    driver: local
