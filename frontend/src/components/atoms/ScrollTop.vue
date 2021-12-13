@@ -7,7 +7,7 @@ export default {
   setup() {
     const onClick = () => {
       return window.scroll(0,0);
-      console.log("git test");
+      console.log("git test2");
     }
     return {
       onClick
