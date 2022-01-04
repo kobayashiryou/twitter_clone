@@ -2,7 +2,6 @@
 <span>
   <button
     class="button"
-    @click="onClick"
   >
     {{title}}
   </button>
@@ -23,5 +22,6 @@ export default {
 <style scoped>
   .button {
     border-radius: 100%;
+    cursor: pointer;
   }
 </style>
