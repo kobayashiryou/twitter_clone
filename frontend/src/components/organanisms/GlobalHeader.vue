@@ -1,8 +1,8 @@
 <template>
   <div class="header">
     <div class="logo">
-      <ImageButton title="開く" @click="onClickSide = !onClickSide" />
-      <SideMenu :openSide="onClickSide" />
+      <ImageButton title="開く" @click="onClickChange" />
+      <SideMenu :openSide="onClickSide" @click-other="onClickChange" />
       <ScrollTop />
     </div>
   </div>
@@ -20,11 +20,11 @@ export default {
     SideMenu,
     ImageButton
   },
-
   setup() {
     const onClickSide = ref(false);
     const onClickChange = () => {
-      return !onClickSide
+      onClickSide.value = !onClickSide.value
+      return onClickSide
     }
     return {
       onClickSide,
