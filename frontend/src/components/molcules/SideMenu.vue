@@ -1,7 +1,6 @@
 <template>
   <div
-    v-show="openSide"
-    class="bar-overlay"
+    :class="{openOverlay: openSide, closeOverlay: !openSide}"
     @click="clickOverlay"
   >
     <transition name="slide">
@@ -9,9 +8,11 @@
         v-show="openSide"
         class="bar-menu"
       >
-        <span>メニュー1</span>
-        <span>メニュー2</span>
-        <span>メニュー3</span>
+        <ul>
+          <li>メニュー1</li>
+          <li>メニュー2</li>
+          <li>メニュー3</li>
+        </ul>
       </div>
     </transition>
   </div>
@@ -36,8 +37,12 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  margin: 0;
+}
 
-.bar-overlay {
+.openOverlay {
+  margin: 0;
   z-index: 2;
   top: 0;
   left: 0;
@@ -45,8 +50,13 @@ export default {
   width: 100%;
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
-  transition: opacity ease;
   display: table;
+}
+.closeOverlay {
+  top:0;
+  left: 0;
+  height: 100%;
+  position: fixed;
 }
 .bar-menu {
   height: 100%;
@@ -57,7 +67,7 @@ export default {
 
 .slide-enter-active, .slide-leave-active{
   transform: translate(0px,0px);
-  transition: transform 400ms cubic-bezier(0,0,0.2,1);
+  transition: transform 400ms cubic-bezier(0,0,0.2,1) 0ms;
 }
 
 .slide-enter-from, .slide-leave-to {
