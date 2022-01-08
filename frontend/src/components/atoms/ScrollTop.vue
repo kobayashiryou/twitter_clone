@@ -6,7 +6,10 @@
 export default {
   setup() {
     const onClick = () => {
-      return window.scroll(0,0);
+      return window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     }
     return {
       onClick
