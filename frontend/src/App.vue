@@ -23,11 +23,9 @@ body {
   background: beige;
   margin: 0 auto;
 }
-#app {
-  text-align: center;
-}
 #nav {
   padding: 60px;
+  text-align: center;
 }
 #nav a {
   font-weight: bold;

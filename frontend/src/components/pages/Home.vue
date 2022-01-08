@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
   .home {
-    height: 2000px
+    height: 2000px;
+    text-align: center;
   }
 </style>

@@ -1,5 +1,12 @@
 <template>
-  <span @click="onClick">戻る</span>
+  <span
+    @click="onClick"
+    class="scroll"
+  >
+    <button>
+      戻る
+    </button>
+  </span>
 </template>
 <script>
 
@@ -19,7 +26,11 @@ export default {
 </script>
 
 <style scoped>
-  span {
+  p {
     cursor: pointer;
+  }
+
+  .scroll {
+    display: inline-block;
   }
 </style>

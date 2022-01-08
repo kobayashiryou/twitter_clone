@@ -28,6 +28,7 @@ export default {
     border-radius:50%;
     border: none;
     box-shadow: paleturquoise;
+    display: inline-block;
   }
   .button:hover {
     cursor: pointer;

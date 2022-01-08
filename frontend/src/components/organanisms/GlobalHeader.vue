@@ -1,10 +1,8 @@
 <template>
   <div class="header">
-    <div class="logo">
-      <ImageButton title="開く" @click="onClickChange" />
+      <ImageButton class="imgbtn" title="開く" @click="onClickChange" />
+      <ScrollTop class="scrlbtn" />
       <SideMenu :openSide="onClickSide" @click-other="onClickChange" />
-      <ScrollTop />
-    </div>
   </div>
 </template>
 
@@ -41,10 +39,15 @@ export default {
     position: fixed;
     top: 0;
     z-index: 2;
-    background: rgba(255,255,255,0.5)
-  }
-  .logo {
+    background: rgba(255,255,255,0.5);
     line-height: 60px;
+  }
+  .imgbtn {
+    margin-left: 20px;
+  }
+  .scrlbtn {
+    text-align: center;
+    position: relative;
   }
 
 </style>
