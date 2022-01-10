@@ -1,11 +1,9 @@
 <template>
   <span
-    @click="onClick"
     class="scroll"
+    @click="onClick"
   >
-    <button>
-      戻る
-    </button>
+    <i class="bi bi-twitter" style="color:#00acee; font-size: 30px; line-height: 2"></i>
   </span>
 </template>
 <script>
@@ -26,11 +24,8 @@ export default {
 </script>
 
 <style scoped>
-  p {
-    cursor: pointer;
-  }
-
   .scroll {
     display: inline-block;
+    cursor: pointer;
   }
 </style>
