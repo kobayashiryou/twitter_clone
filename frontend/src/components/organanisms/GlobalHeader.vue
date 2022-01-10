@@ -55,7 +55,7 @@ export default {
     list-style: none;
     margin: 0 auto;
     padding: 0;
-    height: 60px;
+    height: 100%;
     width: 80%;
     display: flex;
     justify-content: space-between;
