@@ -1,10 +1,17 @@
 <template>
   <div class="header">
-    <div class="logo">
-      <ImageButton title="開く" @click="onClickChange" />
-      <SideMenu :openSide="onClickSide" @click-other="onClickChange" />
-      <ScrollTop />
-    </div>
+    <ul class="menu">
+      <li>
+        <ImageButton title="開く" @click="onClickChange" />
+      </li>
+      <li>
+        <ScrollTop />
+      </li>
+      <li>
+        <i class="bi bi-stars" style="color:#00acee; font-size: 30px; line-height: 2"></i>
+      </li>
+    </ul>
+    <SideMenu :openSide="onClickSide" @click-other="onClickChange" />
   </div>
 </template>
 
@@ -41,10 +48,17 @@ export default {
     position: fixed;
     top: 0;
     z-index: 2;
-    background: rgba(255,255,255,0.5)
+    background: white;
+    line-height: 3;
   }
-  .logo {
-    line-height: 60px;
+  .menu {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    height: 60px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
   }
 
 </style>

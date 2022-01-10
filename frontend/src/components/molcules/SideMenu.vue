@@ -1,11 +1,13 @@
 <template>
-  <div
-    :class="{openOverlay: openSide, closeOverlay: !openSide}"
-    @click="clickOverlay"
-  >
+  <div>
+    <div
+      v-if="openSide"
+      class="openOverlay"
+      @click="clickOverlay"
+    ></div>
     <transition name="slide">
       <div
-        v-show="openSide"
+        v-if="openSide"
         class="bar-menu"
       >
         <ul>
@@ -42,7 +44,6 @@ ul {
 }
 
 .openOverlay {
-  margin: 0;
   z-index: 2;
   top: 0;
   left: 0;
@@ -52,22 +53,19 @@ ul {
   background: rgba(0, 0, 0, 0.5);
   display: table;
 }
-.closeOverlay {
-  top:0;
-  left: 0;
-  height: 100%;
-  position: fixed;
-}
 .bar-menu {
-  height: 100%;
-  width: 60%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60vw;
   z-index: 3;
   background: white;
 }
 
 .slide-enter-active, .slide-leave-active{
   transform: translate(0px,0px);
-  transition: transform 400ms cubic-bezier(0,0,0.2,1) 0ms;
+  transition: transform 500ms cubic-bezier(0,0,0.2,1) 0ms;
 }
 
 .slide-enter-from, .slide-leave-to {
