@@ -1,13 +1,13 @@
 <template>
   <div>
     <div
-      v-if="openSide"
+      v-show="openSide"
       class="openOverlay"
       @click="clickOverlay"
     ></div>
     <transition name="slide">
       <div
-        v-if="openSide"
+        v-show="openSide"
         class="bar-menu"
       >
         <ul>
