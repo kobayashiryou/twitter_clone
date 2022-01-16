@@ -1,11 +1,11 @@
 <template>
-<span>
+<div>
   <button
     class="button"
   >
     <img src="https://source.unsplash.com/random" />
   </button>
-</span>
+</div>
 </template>
 
 <script>

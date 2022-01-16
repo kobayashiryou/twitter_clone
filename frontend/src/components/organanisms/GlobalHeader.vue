@@ -2,7 +2,7 @@
   <div class="header">
     <ul class="menu">
       <li>
-        <ImageButton title="開く" @click="onClickChange" />
+        <ImageButton @click="onClickChange" />
       </li>
       <li>
         <ScrollTop />
@@ -18,7 +18,7 @@
 <script>
 import { ref } from '@vue/reactivity'
 import ScrollTop from '../atoms/ScrollTop.vue'
-import SideMenu from '../molcules/SideMenu.vue'
+import SideMenu from './SideMenu.vue'
 import ImageButton from '../atoms/ImageButton.vue'
 
 export default {
@@ -43,6 +43,7 @@ export default {
 
 <style scoped>
   .header {
+    display: flex;
     height: 60px;
     width: 100%;
     position: fixed;
@@ -50,6 +51,7 @@ export default {
     z-index: 2;
     background: white;
     line-height: 3;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .menu {
     list-style: none;

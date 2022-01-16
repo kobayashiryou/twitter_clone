@@ -10,22 +10,38 @@
         v-show="openSide"
         class="bar-menu"
       >
-        <ul>
-          <li>メニュー1</li>
-          <li>メニュー2</li>
-          <li>メニュー3</li>
-        </ul>
+        <AccountInfoButton
+          :accountName="userName"
+          :accountId="userId"
+          :follow="userFollow"
+          :follower="userFollower"
+        />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
+import AccountInfoButton from '@/components/molcules/AccountInfoButton.vue'
+
 export default {
   props: {
     openSide: {
       type: Boolean,
+    },
+  },
+  data() {
+    return {
+      userName: "ハリー",
+      userId: "@harry",
+      userFollow: 100,
+      userFollower: 100,
+      userBirthDay: "1993年8月21日",
+      userAccountCreate: "2019年3月",
     }
+  },
+  components: {
+    AccountInfoButton
   },
   setup(props,click) {
     const clickOverlay = () => {
@@ -58,7 +74,7 @@ ul {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 60vw;
+  width: 70vw;
   z-index: 3;
   background: white;
 }
@@ -71,7 +87,6 @@ ul {
 .slide-enter-from, .slide-leave-to {
   transform: translate(-100vw) translateX(0px);
 }
-
 
 
 </style>
