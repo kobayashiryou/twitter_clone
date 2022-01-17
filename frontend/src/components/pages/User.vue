@@ -5,29 +5,63 @@
     </div>
     <AccountInfoButton
       class="account-info"
-      :accountName="userName"
-      :accountId="userId"
-      :birthday="userBirthDay"
-      :accountCreate="userAccountCreate"
-      :follow="userFollow"
-      :follower="userFollower"
+      :accountName="accountInfo.userName"
+      :accountId="accountInfo.userId"
+      :birthday="accountInfo.userBirthDay"
+      :accountCreate="accountInfo.userAccountCreate"
+      :follow="accountInfo.userFollow"
+      :follower="accountInfo.userFollower"
     />
+    <TweetIndex
+      :topPosition="style.topPosition"
+      :tweetMenu="style.menuList"
+      :accountTweets="userTweets"
+    />
+    <div>
+      <input class="post-tweet" type="text" v-model="userTweet.content" />
+    </div>
   </div>
 </template>
 <script>
 import AccountInfoButton from '@/components/molcules/AccountInfoButton.vue'
+import TweetIndex from '@/components/organanisms/TweetIndex.vue'
+
 export default {
   components: {
-    AccountInfoButton
+    AccountInfoButton,
+    TweetIndex
   },
   data() {
     return {
-      userName: "ハリー",
-      userId: "@harry",
-      userFollow: 100,
-      userFollower: 100,
-      userBirthDay: "1993年8月21日",
-      userAccountCreate: "2019年3月",
+      accountInfo: {
+        userName: "ハリー",
+        userId: "@harry",
+        userFollow: 100,
+        userFollower: 100,
+        userBirthDay: "1993年8月21日",
+        userAccountCreate: "2019年3月",
+      },
+      style: {
+        topPosition: "317px",
+        menuList: true
+      },
+      userTweet: {
+        content: ""
+      },
+      userTweets: [
+        {
+          id: 1,
+          tweet: "おはようございます"
+        },
+        {
+          id: 2,
+          tweet: "おはようございます"
+        },
+        {
+          id: 3,
+          tweet: "おはようございます"
+        }
+      ]
     }
   },
 }
@@ -55,5 +89,9 @@ export default {
   align-items: left;
   position:absolute;
   top: 100px;
+}
+
+.post-tweet {
+  top: 500px
 }
 </style>

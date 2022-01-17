@@ -1,19 +1,24 @@
 <template>
   <div class="home">
     <GlobalHeader />
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TweetIndex :topPosition="top" />
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
 import GlobalHeader from '@/components/organanisms/GlobalHeader.vue'
+import TweetIndex from '@/components/organanisms/TweetIndex.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
     GlobalHeader,
+    TweetIndex,
+  },
+  data() {
+    return {
+      top: "60px"
+    }
   }
 }
 </script>
