@@ -17,14 +17,16 @@
       </div>
     </div>
     <div class="user-tweet-index">
-      <div v-for="accountTweet in accountTweets" :key="accountTweet.id">
-        <p>{{accountTweet.tweet}}</p>
-      </div>
+      <TweetTable
+        :userTweets="accountTweets"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import TweetTable from '@/components/molcules/TweetTable.vue'
+
 export default {
   props: {
     topPosition: {
@@ -37,6 +39,9 @@ export default {
     accountTweets: {
       type: Array,
     }
+  },
+  components: {
+    TweetTable
   },
   computed: {
     tweetIndexPosition() {
@@ -76,7 +81,7 @@ export default {
 }
 
 .tweet-index {
-  height: 100px;
+  height: 100vh;
   overflow: scroll;
 }
 

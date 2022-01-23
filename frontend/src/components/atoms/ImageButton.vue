@@ -14,6 +14,10 @@ export default {
     title: {
       type: String,
       default: "ボタン"
+    },
+    url: {
+      type: String,
+      default: "https://source.unsplash.com/random"
     }
   }
 }

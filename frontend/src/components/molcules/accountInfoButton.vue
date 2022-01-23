@@ -68,10 +68,10 @@ export default {
       type: Number,
     },
     birthday: {
-      type: Date,
+      type: String,
     },
     accountCreate: {
-      type: Date,
+      type: String,
     },
   },
   components: {
