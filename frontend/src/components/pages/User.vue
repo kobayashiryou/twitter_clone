@@ -17,6 +17,10 @@
       :tweetMenu="style.menuList"
       :accountTweets="userTweets"
     />
+    <TweetModal
+      class="tweet-position"
+      @tweet-push="newTweetPush"
+    />
     <div>
       <input class="post-tweet" type="text" v-model="userTweet.content" />
     </div>
@@ -25,11 +29,13 @@
 <script>
 import AccountInfoButton from '@/components/molcules/AccountInfoButton.vue'
 import TweetIndex from '@/components/organanisms/TweetIndex.vue'
+import TweetModal from '@/components/organanisms/TweetModal.vue'
 
 export default {
   components: {
     AccountInfoButton,
-    TweetIndex
+    TweetIndex,
+    TweetModal
   },
   data() {
     return {
@@ -50,18 +56,21 @@ export default {
       },
       userTweets: [
         {
-          id: 1,
           tweet: "おはようございます"
         },
         {
-          id: 2,
-          tweet: "おはようございます"
+          tweet: "こんにちは"
         },
         {
-          id: 3,
-          tweet: "おはようございます"
+          tweet: "こんばんわ"
         }
       ]
+    }
+  },
+  methods: {
+    newTweetPush(newTweet) {
+
+      this.userTweets.push({tweet: newTweet});
     }
   },
 }
@@ -77,7 +86,6 @@ export default {
   width: 100%;
   height: 100px;
   position: fixed;
-  z-index: 3;
 }
 .user-badkground-aicon img {
   height: 100%;
