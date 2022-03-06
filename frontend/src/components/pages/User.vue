@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import AccountInfoButton from '@/components/molcules/AccountInfoButton.vue'
+import AccountInfoButton from '@/components/molcules/accountInfoButton.vue'
 import TweetIndex from '@/components/organanisms/TweetIndex.vue'
 import TweetModal from '@/components/organanisms/TweetModal.vue'
 

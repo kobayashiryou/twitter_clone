@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import AccountInfoButton from '@/components/molcules/AccountInfoButton.vue'
+import AccountInfoButton from '@/components/molcules/accountInfoButton.vue'
 
 export default {
   props: {
